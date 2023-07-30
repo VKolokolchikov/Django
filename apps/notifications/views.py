@@ -11,4 +11,4 @@ class NotificationThrottle(AnonRateThrottle):
 
 class NotificationAPIView(CreateAPIView):
     serializer_class = NotificationSerializer
-    # throttle_classes = [NotificationThrottle]
+    throttle_classes = [NotificationThrottle]

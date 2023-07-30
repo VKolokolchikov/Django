@@ -14,7 +14,9 @@ class Comments(models.Model):
     social_status = models.CharField(verbose_name='Специальность\Социальный статус', max_length=200)
     city = models.CharField(verbose_name='Город', max_length=200)
     comment = models.TextField(verbose_name='Текст', max_length=500)
-    teacher = models.ForeignKey(Teacher, verbose_name='Отзыв на учителя', on_delete=models.SET_NULL, blank=True, null=True,)
+    teacher = models.ForeignKey(
+        Teacher, verbose_name='Отзыв на учителя', on_delete=models.SET_NULL, blank=True, null=True,
+    )
 
     image = GenericRelation(
         ImageModel,

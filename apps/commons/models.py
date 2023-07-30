@@ -4,7 +4,7 @@ from django.contrib.contenttypes.models import ContentType
 
 from apps.commons.managers import FileQuerySet
 from apps.commons.utils import set_upload_path, set_extension
-from apps.commons.validators import FILE_VALIDATORS
+from apps.commons.validators import FILE_VALIDATORS, IMAGE_VALIDATORS
 
 
 class DateTimeMixin(models.Model):
@@ -53,11 +53,11 @@ class FileInterfaceModel(DateTimeMixin):
 
 
 class ImageModel(FileInterfaceModel):
-    file = models.FileField(verbose_name='Изображение', validators=[], upload_to=set_upload_path)
+    file = models.FileField(verbose_name='Изображение', validators=IMAGE_VALIDATORS, upload_to=set_upload_path)
 
 
 class LogoModel(FileInterfaceModel):
-    file = models.FileField(verbose_name='Логотип', validators=[], upload_to=set_upload_path)
+    file = models.FileField(verbose_name='Логотип', validators=IMAGE_VALIDATORS, upload_to=set_upload_path)
 
 
 class FileModel(FileInterfaceModel):

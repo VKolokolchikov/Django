@@ -31,6 +31,6 @@ class RegexValidatorPhone(BaseValidator):
         return not re.match(valid_phone, phone)
 
 
-# IMAGE_VALIDATORS = [FileExtensionValidator('png', 'jpg', 'jpeg'), BaseSizeValidator(MAX_IMAGE_SIZE)]
+IMAGE_VALIDATORS = [FileExtensionValidator('png', 'jpg', 'jpeg'), BaseSizeValidator(MAX_IMAGE_SIZE)]
 FILE_VALIDATORS = [FileExtensionValidator(['doc', 'docx', 'pdf']), BaseSizeValidator(MAX_FILE_SIZE)]
 phone_validator = RegexValidatorPhone(limit_value=r'^(\+7|8)[0-9]{9}')
